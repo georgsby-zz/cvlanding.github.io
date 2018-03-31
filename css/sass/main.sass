@@ -1,0 +1,681 @@
+@import "bourbon/bourbon"
+
+
+
+$text-color: #333
+$grey-color: #dedede
+$green-color: #67bc5c
+$red-color: #9b1818
+$dark-blue-color: #353541
+$yellow-color: #e3e526
+
+body
+	font-family: RobotoRegular, sans-serif
+	color: $text-color
+	font-weight: normal
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.6
+	-webkit-font-smoothing: antialised
+	overflow-x: hidden
+
+
+li 
+	list-style: none
+
+
+ul 
+	padding: 0
+	margin: 0
+
+h1, h2, h3, h4, h5, h6
+	margin-top: 0
+	margin-bottom: 0
+	font-weight: normal
+
+p
+	margin: 0
+
+a:hover
+	text-decoration: none
+
+@function rem($px)
+	@return $px / 16px + 0rem
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: red
+body input:required:valid,
+body textarea:required:valid
+	color: green
+
+.hidden
+	display: none
+
+.pos_item
+	position: relative
+
+//menu
+.menu-link
+	z-index: 1010
+	display: block
+	width: 50px
+	height: 50px
+	background: rgba(255, 255, 255, .2)
+	border-radius: 50%
+	box-shadow: 1px 1px rgba(0, 0, 0, .4s)
+	position: fixed
+	top: 20px
+	left: 20px
+	span
+		display: block
+		height: 2px
+		width: 18px
+		position: absolute
+		left: 50%
+		margin-left: -9px
+		top: 50%
+		margin-top: -1px
+		background-color: $green-color
+		&:before
+			transition: all .2s
+			margin-top: -6px
+			content: ''
+			display: block
+			height: 2px
+			width: 18px
+			position: absolute
+			left: 50%
+			margin-left: -9px
+			top: 50%
+			background-color: $green-color
+		&:after
+			transition: all .2s
+			margin-top: 4px
+			content: ''
+			display: block
+			height: 2px
+			width: 18px
+			position: absolute
+			left: 50%
+			margin-left: -9px
+			top: 50%
+			background-color: $green-color
+
+.menu-link_active span
+	background: transparent
+	&:before
+		transform: rotate(135deg)
+		margin-top: 0
+	&:after
+		transform: rotate(-135deg)
+		margin-top: 0
+
+.menu
+	z-index: 999
+	display: block
+	justify-content: center
+	align-items: center
+	background: rgba(0, 128, 0, .2)
+	position: fixed
+	width: 20vw
+	height: 100vh
+	left: -100vw
+	transition: all .5s
+
+.nav_menu
+	text-align: center
+	margin-top: 20%
+
+.menu_active
+	left: 0
+
+.nav_link
+	display: block
+	text-transform: uppercase
+	line-height: 2.5
+	font-weight: 100
+	color: #fff
+	&:hover
+		color: #fff
+		width: 20vw
+		text-decoration: none
+		background-color: $green-color
+
+
+//header
+header	
+	background-image: url(../img/header_bg.png)
+	background-position: top center
+	min-height: 786px !important;
+	background-size: cover
+	color: #fff
+	
+.top_greeting
+	margin: 250px auto 0
+	width: 39%
+	text-align: center
+
+.greet_line
+	display: block
+	height: 2px
+	width: 100%
+	background: green
+
+.top_name
+	font-size: 36px
+	font-family: RobotoBold
+	text-transform: uppercase
+	span
+		color: green
+
+.top_desc
+	font-size: 18px
+	margin-bottom: 40px
+
+.button
+	text-transform: uppercase
+	font-family: RobotoBold
+	padding: 8px
+	color: green
+	font-size: 20px
+	border: 3px solid green
+	display: block
+	margin: 0 auto
+	border-radius: 30px
+	text-align: center
+	width: 40%
+	transition: all 0.8s
+	cursor: pointer
+	&:hover, &:focus, &:active
+		background: $green-color
+		color: #fff
+		border: 3px solid transparent
+		text-decoration: none
+
+//SECTION ABOUT
+.about
+	background: $grey-color
+	padding: 40px 0
+
+.list-left li
+	text-align: right
+
+
+.main_title
+	text-align: center
+	color: #000
+	font-size: 38px
+	font-family: RobotoBold
+	text-transform: uppercase
+	margin-bottom: 10px
+	&.s_white
+		color: #fff
+	
+.title_line
+	display: block
+	height: 1px
+	width: 300px
+	background: $green-color
+	margin: 0 auto
+	margin-bottom: 20px
+	position: relative
+	&:before
+		content: ''
+		height: 4px
+		width: 100px
+		background: green
+		position: absolute
+		left: 50%
+		transform: translate(-50px, -2px)
+	&:after
+		content: ''
+		height: 16px
+		width: 16px
+		border-radius: 50%
+		background: green
+		position: absolute
+		right: 50%
+		transform: translate(8px, -8px)
+
+
+.about_info
+	margin-top: 50px
+
+.about-list
+	margin-top: 34px
+
+.about_list-item
+	margin-bottom: 36px
+	h3
+		font-family: RobotoBold
+		font-size: 20px
+		line-height: 1
+		text-transform: uppercase
+	p
+		font-size: 16px
+		margin: 0
+		color: #aeaaaa
+
+.about_pic
+	display: block
+	margin: 0 auto
+	width: 370px
+	height: 370px
+	border-radius: 50%
+	overflow: hidden
+	border: 8px solid #fff
+	img
+		max-width: 100%
+
+.about_desc
+	color: #aeaaaa
+	display: block
+	margin: 3% auto
+	text-align: justify
+
+.link_resume
+	text-align: center
+	padding: 10px 0
+	border: 3px solid green
+	display: block
+	color: green
+	text-transform: uppercase
+	font-size: 20px
+	width: 23%
+	font-family: RobotoBold
+	border-radius: 30px
+	margin: 0 auto
+	transition: all .8s
+	&:hover, &:focus, &:active
+		background: $green-color
+		color: #dedede
+		text-decoration: none
+		border: 3px solid transparent
+		box-shadow: 2px 5px 10px rgba(0, 0, 0, .6)
+
+//SECTION EXTRAEDUCATION
+.ex_education
+	padding: 40px 0
+
+.ex_education-list
+	display: block
+	padding: 0 150px
+	display: block
+	position: relative
+	margin-bottom: 80px
+	&:before
+		z-index: -1
+		content: ''
+		width: 2px
+		background: $green-color
+		position: absolute
+		left: 50%
+		height: 160%
+		transform: translateY(50px)
+	&:last-child::before
+		transform: translateY(-15px)
+
+
+	
+.ex_education-list_item
+	width: 39.2%
+	border-radius: 20px
+	background: $green-color	
+	display: inline-block
+	transition: all ease-out .5s
+	&:first-child
+		margin-right: 176px		
+	&:last-child
+		transform: translateY(90px)
+		.ex_education-tooltip
+			transform: rotate(180deg) translate(-84px, -9px);
+			left: -50%
+			top: 0
+		.ex_circle
+			transform: translate(65px, 37px);
+			left: -50%
+			top: 0
+
+	&:hover
+		background: green
+		.ex_education-tooltip
+			border-left-color: green
+		.ex_circle
+			border: 5px solid green 
+
+.ex_education-block
+	color: #fff	
+	cursor: pointer
+	padding: 10px 20px	
+	position: relative
+
+.ex_education-tooltip
+	border: 42px solid transparent
+	border-left-color: $green-color
+	position: absolute
+	transform: translate(-3px, -42px)
+	left: 100%
+	top: 50%
+	transition: 0.5s
+	&:hover
+		border-left-color: green
+
+.ex_circle
+	content: ''
+	width: 25px
+	height: 25px
+	background: $green-color
+	position: absolute
+	transform: translate(79px, -10px);
+	border-radius: 50%
+	border: 5px solid #fff
+	left: 100%
+	top: 50%
+	z-index: 10
+
+.ex_education-title
+	font-family: RobotoBold
+	font-size: 20px
+
+
+//SECTION EDUCATION
+.education
+	padding: 40px 0
+
+.ed_title
+	margin-top: 40px
+
+.education-list
+	display: block
+	padding: 0 150px
+	display: block
+	position: relative
+	margin-bottom: 80px
+	&:before
+		content: ''
+		width: 2px
+		background: $green-color
+		position: absolute
+		left: 50%
+		height: 80%
+		transform: translateY(60px)
+	
+.education-list_item
+	width: 39.2%
+	border-radius: 20px
+	background: $green-color	
+	display: inline-block
+	transition: all ease-out .5s
+	&:first-child
+		margin-right: 176px		
+	&:last-child
+		transform: translateY(90px)
+		.education-tooltip
+			transform: rotate(180deg) translate(-72px, -10px);
+			left: -50%
+			top: 0
+		.circle
+			transform: translate(65px, 44px);
+			left: -50%
+			top: 0
+	&:hover
+		background: green
+		.education-tooltip
+			border-left-color: green
+		.circle
+			border: 5px solid green 
+
+.education-block
+	color: #fff	
+	cursor: pointer
+	padding: 10px 20px	
+	position: relative
+
+.education-tooltip
+	border: 48px solid transparent
+	border-left-color: $green-color
+	position: absolute
+	transform: translate(-3px, -48px)
+	left: 100%
+	top: 50%
+	transition: 0.5s
+	&:hover
+		border-left-color: green
+
+.circle
+	content: ''
+	width: 25px
+	height: 25px
+	background: $green-color
+	position: absolute
+	transform: translate(79px, -10px);
+	border-radius: 50%
+	border: 5px solid #fff
+	left: 100%
+	top: 50%
+
+.education-title
+	font-family: RobotoBold
+	font-size: 12px
+
+.education-desc
+	font-size: 10px
+
+//SECTION SKILLS
+.skills
+	background: url(../img/skill_bg.png)
+	background-repeat: 0 0 no-repeat
+	background-size: cover
+	min-height: 500px
+
+.skills_title
+ color: #fff	
+ font-size: 16px
+
+.skills_info
+	margin: 50px 0
+
+.design > li
+	&:nth-child(2)
+		.skills_progbar-load
+			width: 88%
+	&:last-child
+		.skills_progbar-load
+			width: 20%
+
+
+
+.web > li
+	&:first-child
+		.skills_progbar-load
+			width: 92%
+	&:nth-child(2)
+		.skills_progbar-load
+			width: 74%
+	&:last-child
+		.skills_progbar-load
+			width: 88%
+
+.back-end > li
+	&:first-child
+		.skills_progbar-load
+			width: 56%
+	&:last-child
+		.skills_progbar-load
+			width: 30%
+			transition: 0.8s
+		
+
+
+.skills-list_item
+	margin-bottom: 50px
+
+.skills_progbar
+ 	position: relative
+ 	height: 20px
+ 	width: 85%
+ 	background: green
+ 	border-radius: 20px
+ 	border: 3px solid $green-color
+
+.skills_progbar-load
+	position: absolute
+	width: 82%
+	height: 16px
+	background: $green-color
+	border-radius: 20px
+	transform: translate(-2px, -1px)
+
+
+.skills_percent
+ 	color: #fff
+ 	position: absolute
+ 	left: 100%
+ 	font-weight: 100
+ 	transform: translate(15px, -5px)
+
+
+//SECTION PORTFOLIO
+.portfolio
+	background: #000
+
+//SECTION LOCATION
+.location
+	background: #dedede
+
+#map
+	margin-top: 40px
+	z-index: 500
+
+.location-list
+	padding: 40px 0
+	margin-left: 100px
+
+.location-list-item
+	margin-bottom: 40px
+
+
+.location_info
+	font-family: "CleanvertisingLight"
+	display: inline-block
+
+.location_tittle
+	font-size: 22px
+	font-weight: 500
+
+
+.fa
+	font-size: 35px
+	margin-right: 20px
+	transform: translateY(-8px)
+
+
+//SECTION FEEDBACK
+
+.feedack
+	background: #3b323c
+	padding-bottom: 40px
+
+.feedback_tittle
+	color: #dedede
+	text-align: center
+	font-size: 18px
+	margin-bottom: 25px
+
+
+.feedback_input > input
+	color: #dedede
+	padding: 0 10px
+	border-radius: 5px
+	margin-bottom: 25px
+	box-sizing: border-box
+	width: 31%
+	margin-right: 3.1%
+	border: 1px solid #dedede
+	background: #3b323c
+	height: 40px
+	&:last-child
+		margin-right: 0
+
+#for_message
+	border: 1px solid #dedede
+	background: #3b323c
+	color: #dedede
+	border-radius: 5px
+	width: 100%
+	height: 150px
+	padding: 10px
+
+.feedback_leave
+	display: block
+	margin: 0 auto
+	padding: 15px 25px
+	background: #3b323c
+	color: #dedede
+	font-family: RobotoBold
+	border: 1px solid #dedede
+	border-radius: 30px
+	margin-top: 15px
+	transition: all 0.8s
+	&:hover, &:focus, &:active
+		color: #dedede
+		border: 1px solid $red-color
+		background: $red-color
+		box-shadow: 3px 2px 10px rgba(0, 0, 0, 0.8)
+		text-decoration: none
+
+
+//FOOTER
+footer
+	background: #000
+	padding: 20px
+
+.footer_links-list
+	display: block
+	margin: 0 auto
+	width: 15%
+
+.footer_links
+	background: url(../img/footer_link-05.png) 0 0 no-repeat
+	width: 37px
+	height: 37px
+	display: block
+	transition: all .8s
+	&.tg
+		background-position: 0 -53px
+	&.ln
+		background-position: 0 -105px
+	&:hover
+		background: url(../img/footer_link-06.png) 0 0 no-repeat
+		&.tg
+			background-position: 0 -53px
+		&.ln
+			background-position: 0 -105px
+
+
+.footer_links-list
+	li
+ 		display: inline-block
+ 		padding: 0 4%
+
+.footer_links-list-item
+	&:nth-child(2)
+		border-right: 1px solid #dedede
+		border-left: 1px solid #dedede
+
+.footer_name
+	margin-top: 15px
+	font-size: 24px
+	text-transform: uppercase
+	color: #dedede
+	font-family: RobotoBold
+	text-align: center
+	span
+		color: $green-color
+
+.footer_desc
+	text-align: center
+	color: #dedede
+	font-size: 12px
